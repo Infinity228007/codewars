@@ -51,3 +51,17 @@ def tower_builder(n_floors):
 
 print(tower_builder(3))
 print(tower_builder(6))
+
+def sequence_classifier(arr):
+    if all(arr[i] < arr[i + 1] for i in range(len(arr) - 1)):
+        return 1
+    elif all(arr[i] <= arr[i + 1] for i in range(len(arr) - 1)):
+        return 2
+    elif all(arr[i] > arr[i + 1] for i in range(len(arr) - 1)):
+        return 3
+    elif all(arr[i] >= arr[i + 1] for i in range(len(arr) - 1)):
+        return 4
+    elif all(arr[i] == arr[i + 1] for i in range(len(arr) - 1)):
+        return 5
+    else:
+        return 0
