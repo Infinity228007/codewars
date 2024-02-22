@@ -73,3 +73,13 @@ def format_time(seconds):
     seconds %= 60
     return '{:02d}:{:02d}:{:02d}'.format(hours, minutes, seconds)
 
+def format_time(seconds):
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    seconds = seconds % 60
+
+    return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+
+print(format_time(3661))  # Output: '01:01:01'
+
+
