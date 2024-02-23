@@ -80,6 +80,18 @@ def format_time(seconds):
 
     return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
 
-print(format_time(3661))  # Output: '01:01:01'
+def next_bigger(n):
+    digits = [int(d) for d in str(n)]
+    i = len(digits) - 1
+    while i > 0 and digits[i - 1] >= digits[i]:
+        i -= 1
+    if i == 0:
+        return -1
+    j = len(digits) - 1
+    while digits[j] <= digits[i - 1]:
+        j -= 1
+    digits[i - 1], digits[j] = digits[j], digits[i - 1]
+    digits[i:] = sorted(digits[i:])
+    return int(''.join(map(str, digits)))
 
 
