@@ -94,4 +94,5 @@ def next_bigger(n):
     digits[i:] = sorted(digits[i:])
     return int(''.join(map(str, digits)))
 
-
+def sum_digits(n):
+    return sum(int(digit) for digit in str(abs(n)))
